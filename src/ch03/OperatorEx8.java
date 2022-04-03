@@ -7,7 +7,7 @@ public class OperatorEx8 {
 
         long c = a * b;
 
-        // Stack Overflow: expected 2,000,000,000,000, but printed negative number due to the overflow
+        // Overflow: expected 2,000,000,000,000, but printed negative number due to the overflow
         System.out.println(c);
     }
 }
