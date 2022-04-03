@@ -2,15 +2,18 @@ package ch03;
 
 public class OperatorEx22 {
     public static void main(String[] args) {
-        String str1 = "abc";
-        String str2 = new String("abc");
+        float f = 0.1f;
+        double d = 0.1;
+        double d2 = (double) f;
 
-        System.out.printf("abc == abc ? %b\n", "abc" == "abc");
-        System.out.printf("str1 == abc ? %b\n", str1 == "abc");
-        System.out.printf("str2 == abc ? %b\n", str2 == "abc");
-        System.out.printf("str1.equals(\"abc\") ? %b\n", str1.equals("abc"));
-        System.out.printf("str2.equals(\"abc\") ? %b\n", str2.equals("abc"));
-        System.out.printf("str2.equals(\"ABC\") ? %b\n", str2.equals("ABC"));
-        System.out.printf("str2.equalsIgnoreCase(\"ABC\") ? %b\n", str2.equalsIgnoreCase("ABC"));
+        System.out.printf("10 == 10.0f\t%b\n", 10 == 10.0f);
+        System.out.printf("0.1 == 0.1f\t%b\n", 0.1 == 0.1f);
+        System.out.printf("f = %19.17f\n", f);
+        System.out.printf("d = %19.17f\n", d);
+        System.out.printf("d2 = %19.17f\n", d2);
+        System.out.printf("d == f\t%b\n", d == f);
+        System.out.printf("d == d2\t%b\n", d == d2);
+        System.out.printf("d2 == f\t%b\n", d2 == f);
+        System.out.printf("(float)d == f\t%b\n", (float) d == f);
     }
 }
