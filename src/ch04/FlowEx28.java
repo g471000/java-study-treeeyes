@@ -2,7 +2,7 @@ package ch04;
 
 import java.util.Scanner;
 
-public class Flow28 {
+public class FlowEx28 {
     public static void main(String[] args) {
         int input = 0, answer = 0;
 
