@@ -1,6 +1,6 @@
 package ch06;
 
-public class TvTest {
+public class TVTest {
     public static void main(String[] args) {
         TV tv = new TV();
         tv.channel = 7;
