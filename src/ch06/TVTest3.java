@@ -1,6 +1,6 @@
 package ch06;
 
-public class TvTest3 {
+public class TVTest3 {
     public static void main(String[] args) {
         TV tv1 = new TV();
         TV tv2 = new TV();
