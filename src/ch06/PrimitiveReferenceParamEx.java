@@ -1,6 +1,6 @@
 package ch06;
 
-public class PrimitiveParamEx {
+public class PrimitiveReferenceParamEx {
     public static void main(String[] args) {
         Data d = new Data();
         d.x = 10;
