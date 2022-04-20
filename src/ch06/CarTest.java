@@ -19,6 +19,12 @@ class Car {
         door = d;
     }
 
+    Car(Car c) {
+        color = c.color;
+        gearType = c.gearType;
+        door = c.door;
+    }
+
     public String toString()  {
         return "color= " + color + ", gearType = " + gearType + ", door = " + door;
     }
@@ -37,5 +43,8 @@ public class CarTest {
 
         Car c3 = new Car("blue");
         System.out.println("Car c3: " + c3.toString());
+
+        Car c4 = new Car(c1);
+        System.out.println("Car c4: " + c4.toString());
     }
 }
