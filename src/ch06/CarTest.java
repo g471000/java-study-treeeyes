@@ -5,7 +5,13 @@ class Car {
     String gearType;
     int door;
 
-    Car(){}
+    Car(){
+        this("white", "auto", 4);
+    }
+
+    Car(String color) {
+        this(color, "auto", 4);
+    }
 
     Car(String c, String g, int d) {
         color = c;
@@ -28,5 +34,8 @@ public class CarTest {
 
         Car c2 = new Car("black", "auto", 2);
         System.out.println("Car c2: " + c2.toString());
+
+        Car c3 = new Car("blue");
+        System.out.println("Car c3: " + c3.toString());
     }
 }
