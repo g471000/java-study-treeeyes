@@ -1,4 +1,4 @@
-package ch06;
+package ch07;
 
 public class TVTest3 {
     public static void main(String[] args) {
