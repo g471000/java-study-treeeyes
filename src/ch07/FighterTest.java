@@ -22,6 +22,10 @@ public class FighterTest {
     }
 }
 class Fighter extends Unit implements Fightable {
+    Fighter() {
+        super(100);
+    }
+
     public void move(int x, int y) {
         this.x += x;
         this.y += y;
@@ -30,11 +34,6 @@ class Fighter extends Unit implements Fightable {
     public void attack(Unit unit) {
         unit.currentHP -= (int) (Math.random() * 20) + 5;
     }
-}
-
-class Unit {
-    int currentHP;
-    int x, y;
 }
 
 interface Fightable extends Movable, Attackable { }
