@@ -1,19 +1,18 @@
 package ch08;
 
 public class NewException {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InstallException {
         try {
             startInstall();
             copyFiles();
         } catch (SpaceException spaceException) {
-            System.out.println("Error Message: " + spaceException.getMessage());
-            spaceException.printStackTrace();
-            System.out.println("Please make more space and retry.");
+            InstallException ie = new InstallException("Exception while installing.");
+            ie.initCause(spaceException);
+            throw ie;
         } catch (MemoryException memoryException) {
-            System.out.println("Error Message: " + memoryException.getMessage());
-            memoryException.printStackTrace();
-            System.gc();
-            System.out.println("Please try install again. Not enough memory right now.");
+            InstallException ie = new InstallException("Exception while installing.");
+            ie.initCause(memoryException);
+            throw ie;
         } finally {
             deleteTempFiles();
         }
@@ -53,6 +52,12 @@ class SpaceException extends Exception {
 
 class MemoryException extends Exception {
     MemoryException(String msg) {
+        super(msg);
+    }
+}
+
+class InstallException extends Exception {
+    InstallException(String msg) {
         super(msg);
     }
 }
