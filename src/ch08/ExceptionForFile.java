@@ -4,9 +4,12 @@ import java.io.*;
 
 public class ExceptionForFile {
     public static void main(String[] args) throws IOException {
-        String filename = args.length == 0 ? "" : args[0];
-        File f = createFile(filename);
-        System.out.println(f.getName() + " file was successfully created.");
+        try {
+            File f = createFile(args[0]);
+            System.out.println(f.getName() + " file was successfully created.");
+        } catch (Exception e) {
+            System.out.println(" Please try again. Error: " + e.getMessage());
+        }
     }
 
     static File createFile(String fileName) {
@@ -16,7 +19,7 @@ public class ExceptionForFile {
             }
         } catch (Exception e) {
             fileName = "Unknown.txt";
-        }finally {
+        } finally {
             File f = new File(fileName);
             createNewFile(f);
             return f;
