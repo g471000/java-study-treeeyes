@@ -21,7 +21,6 @@ public class RandomEx2 {
         for (int i = 0; i < counter.length; i++) {
             System.out.println("number of " + i + ": " + printGraph('#', counter[i]) + " " + counter[i]);
         }
-
     }
 
     public static String printGraph(char ch, int value) {
