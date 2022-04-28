@@ -8,7 +8,7 @@ public class CalendarEx01 {
     public static void main(String[] args) {
         Calendar c = Calendar.getInstance();
 
-        System.out.printf("%s-%s\n", c.get(Calendar.YEAR), c.get(Calendar.MONTH));
+        System.out.printf("%s-%s\n", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1);
         System.out.println("Week of the year: " + c.get(Calendar.WEEK_OF_YEAR));
         System.out.println("Week of the month: " + c.get(Calendar.WEEK_OF_MONTH));
         System.out.println();
