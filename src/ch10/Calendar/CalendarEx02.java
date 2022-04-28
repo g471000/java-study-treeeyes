@@ -10,8 +10,8 @@ public class CalendarEx02 {
         Calendar c2 = Calendar.getInstance();
 
         c1.set(2015, Calendar.AUGUST, 15);
-        System.out.printf("Calendar 1 is: %s\n", CaldendarUtils.toString(c1));
-        System.out.printf("Today is: %s\n", CaldendarUtils.toString(c2));
+        System.out.printf("Calendar 1 is: %s\n", CalendarUtils.toString(c1));
+        System.out.printf("Today is: %s\n", CalendarUtils.toString(c2));
 
         long diff = (c2.getTimeInMillis() - c1.getTimeInMillis())/1000;
         System.out.println("Diff of second between two date: " + diff);
