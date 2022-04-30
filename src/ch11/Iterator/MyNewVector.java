@@ -2,16 +2,16 @@ package ch11.Iterator;
 
 import java.util.Iterator;
 
-public class MyVector extends ch11.List.MyVector implements Iterator {
+public class MyNewVector extends ch11.List.MyVector implements Iterator {
     int cursor = 0;
     int lastRet = -1;
 
 
-    public MyVector(int capacity) {
+    public MyNewVector(int capacity) {
         super(capacity);
     }
 
-    public MyVector() {
+    public MyNewVector() {
         this(10);
     }
 
