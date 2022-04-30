@@ -1,4 +1,4 @@
-package ch11.ArrayList;
+package ch11.List;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -17,6 +17,11 @@ public class ArrayListLinkedListTest {
         System.out.println("== adding to middle ==");
         System.out.println("ArrayList: " + addMiddle(al));
         System.out.println("LinkedList " + addMiddle(ll));
+        System.out.println();
+
+        System.out.println("== access ==");
+        System.out.println("ArrayList: " + access(al));
+        System.out.println("LinkedList " + access(ll));
         System.out.println();
 
         System.out.println("== remove from middle back ==");
@@ -62,6 +67,15 @@ public class ArrayListLinkedListTest {
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++) {
             list.remove(500);
+        }
+        long end = System.currentTimeMillis();
+        return end - start;
+    }
+
+    public static long access(List list) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            list.get(i);
         }
         long end = System.currentTimeMillis();
         return end - start;
