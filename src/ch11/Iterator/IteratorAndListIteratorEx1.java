@@ -1,4 +1,4 @@
-package ch11.StackQueue;
+package ch11.Iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
