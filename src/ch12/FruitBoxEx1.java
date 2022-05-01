@@ -20,13 +20,29 @@ class Graph extends Fruit {
     }
 }
 
-class Toy {
+interface Eatable {
+}
+
+class Juice {
+    String name;
+
+    Juice(String name) {
+        this.name = name + " Juice";
+    }
+
     public String toString() {
-        return "Toy";
+        return name;
     }
 }
 
-interface Eatable {
+class Juicer {
+    static Juice makeJuice(FruitBox<? extends Fruit> box) {
+        StringBuilder sb = new StringBuilder();
+        for (Fruit f : box.getList()) {
+            sb.append(f + " ");
+        }
+        return new Juice(sb.toString());
+    }
 }
 
 public class FruitBoxEx1 {
@@ -34,7 +50,6 @@ public class FruitBoxEx1 {
         FruitBox<Fruit> fruitBox = new FruitBox<>();
         FruitBox<Fruit> appleBox = new FruitBox<>();
         FruitBox<Fruit> graphBox = new FruitBox<>();
-        Box<Toy> toyBox = new Box<>();
 
         fruitBox.add(new Fruit());
         fruitBox.add(new Apple());
@@ -45,12 +60,12 @@ public class FruitBoxEx1 {
 
         graphBox.add(new Graph());
 
-        toyBox.add(new Toy());
-
         System.out.println("fruitBox: " + fruitBox);
         System.out.println("appleBox: " + appleBox);
         System.out.println("graphBox: " + graphBox);
-        System.out.println("toyBox: " + toyBox);
+
+        System.out.println(Juicer.makeJuice(fruitBox));
+        System.out.println(Juicer.makeJuice(appleBox));
     }
 }
 
@@ -66,6 +81,10 @@ class Box<T> {
 
     T get(int i) {
         return list.get(i);
+    }
+
+    ArrayList<T> getList() {
+        return list;
     }
 
     int size() {
