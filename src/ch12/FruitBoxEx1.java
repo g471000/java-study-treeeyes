@@ -2,13 +2,13 @@ package ch12;
 
 import java.util.ArrayList;
 
-class Fruit {
+class Fruit implements Eatable {
     public String toString() {
         return "Fruit";
     }
 }
 
-class Apple extends Fruit{
+class Apple extends Fruit {
     public String toString() {
         return "Apple";
     }
@@ -26,18 +26,24 @@ class Toy {
     }
 }
 
+interface Eatable {
+}
+
 public class FruitBoxEx1 {
     public static void main(String[] args) {
-        Box<Fruit> fruitBox = new Box<>();
-        Box<Apple> appleBox = new Box<>();
-        Box<Graph> graphBox = new Box<>();
+        FruitBox<Fruit> fruitBox = new FruitBox<>();
+        FruitBox<Fruit> appleBox = new FruitBox<>();
+        FruitBox<Fruit> graphBox = new FruitBox<>();
         Box<Toy> toyBox = new Box<>();
 
         fruitBox.add(new Fruit());
         fruitBox.add(new Apple());
+        fruitBox.add(new Graph());
 
         appleBox.add(new Apple());
         appleBox.add(new Apple());
+
+        graphBox.add(new Graph());
 
         toyBox.add(new Toy());
 
@@ -48,10 +54,15 @@ public class FruitBoxEx1 {
     }
 }
 
+class FruitBox<T extends Fruit & Eatable> extends Box<T> {
+}
+
 class Box<T> {
     ArrayList<T> list = new ArrayList<>();
+
     void add(T item) {
-        list.add(item);}
+        list.add(item);
+    }
 
     T get(int i) {
         return list.get(i);
