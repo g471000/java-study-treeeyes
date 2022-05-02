@@ -10,6 +10,7 @@ class NewClass {
     @Deprecated
     int oldField;
 
+    @Deprecated
     int getOldField() {
         return oldField;
     }
