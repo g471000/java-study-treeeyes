@@ -7,11 +7,6 @@ package ch06.Exercise;
  * boolean isKwang (if it is kwang, it is true. Otherwise false)
  */
 public class quiz01 {
-
+    // Implemented SutdaCard.java
 }
 
-class SutdaCard{
-    int num;
-    boolean isKwang;
-
-}
