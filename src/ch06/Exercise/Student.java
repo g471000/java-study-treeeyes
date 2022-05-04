@@ -28,6 +28,10 @@ public class Student {
     }
 
     public double getAverage() {
-        return (int)(getTotal() / 3.0 * 10 + 0.5) / 10.0;
+        return (int) (getTotal() / 3.0 * 10 + 0.5) / 10.0;
+    }
+
+    public String info() {
+        return name + "," + classNum + "," + studentNum + "," + korScore + "," + engScore + "," + mathScore + "," + getTotal() + "," + getAverage();
     }
 }

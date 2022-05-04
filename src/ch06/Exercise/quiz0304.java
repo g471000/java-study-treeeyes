@@ -1,6 +1,6 @@
 package ch06.Exercise;
 
-public class quiz03 {
+public class quiz0304 {
     public static void main(String[] args) {
         Student s = new Student("Genie", 1, 1, 100, 60, 76);
 
