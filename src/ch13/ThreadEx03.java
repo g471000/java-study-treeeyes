@@ -1,13 +1,13 @@
 package ch13;
 
-public class ThreadEx2 {
+public class ThreadEx03 {
     public static void main(String[] args) {
-        ThreadEx2_1 t1 = new ThreadEx2_1();
-        t1.start();
+        Thread03 t = new Thread03();
+        t.run();
     }
 }
 
-class ThreadEx2_1 extends Thread {
+class Thread03 extends Thread {
     public void run() {
         throwException();
     }
@@ -18,5 +18,6 @@ class ThreadEx2_1 extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }
