@@ -4,3 +4,5 @@ https://github.com/castello/javajungsuk3
 
 This is Java Study Code.
 All the codes are inside of the src folder.
+
+Covered essential topics of the Java
