@@ -2,17 +2,17 @@ package ch13;
 
 public class ThreadEx01 {
     public static void main(String[] args) {
-        Thread0 t0 = new Thread0();
+        Thread00 t00 = new Thread00();
 
         Runnable r = new Thread1();
         Thread t1 = new Thread(r);
 
-        t0.start();
+        t00.start();
         t1.start();
     }
 }
 
-class Thread0 extends Thread {
+class Thread00 extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println(getName());
@@ -20,7 +20,7 @@ class Thread0 extends Thread {
     }
 }
 
-class Thread1 implements Runnable {
+class Thread01 implements Runnable {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName());
