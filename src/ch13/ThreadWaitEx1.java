@@ -33,16 +33,9 @@ class Customer implements Runnable {
 
             String name = Thread.currentThread().getName();
 
-            if (eatFood()) {
-                System.out.println(name + " ate a " + food);
-            } else {
-                System.out.println(name + " failed to eat " + food);
-            }
+            table.remove(food);
+            System.out.println(name + " ate a " + food);
         }
-    }
-
-    boolean eatFood() {
-        return table.remove(food);
     }
 }
 
@@ -72,22 +65,48 @@ class Table {
     private ArrayList<String> dishes = new ArrayList<>();
 
     public synchronized void add(String dish) {
-        if (dishes.size() >= MAX_FOOD) {
-            return;
+        while (dishes.size() >= MAX_FOOD) {
+            String name = Thread.currentThread().getName();
+            System.out.println(name + " is waiting...");
+            try {
+                wait();
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+            }
         }
+
         dishes.add(dish);
+        notify();
         System.out.println("Dishes: " + dishes.toString());
     }
 
-    public boolean remove(String dishName) {
+    public void remove(String dishName) {
         synchronized (this) {
-            for (int i = 0; i < dishes.size(); i++) {
-                if (dishName.equals(dishes.get(i))) {
-                    dishes.remove(i);
-                    return true;
+            String name = Thread.currentThread().getName();
+
+            while (dishes.size() == 0) {
+                System.out.println(name + " is waiting.");
+                try {
+                    wait();
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
                 }
             }
-            return false;
+
+            while (true) {
+                for (int i = 0; i < dishes.size(); i++) {
+                    dishes.remove(i);
+                    notify();
+                    return;
+                }
+
+                try {
+                    System.out.println(name + " is waiting.");
+                    wait();
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                }
+            }
         }
     }
 
