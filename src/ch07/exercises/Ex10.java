@@ -8,6 +8,13 @@ public class Ex10 {
         System.out.println("CH: " + tv.getChannel());
         tv.setVolume(20);
         System.out.println("VOL: " + tv.getVolume());
+
+        tv.setChannel(2);
+        System.out.println("CH: " + tv.getChannel());
+        tv.getPrevChannel();
+        System.out.println("CH: " + tv.getChannel());
+        tv.getPrevChannel();
+        System.out.println("CH: " + tv.getChannel());
     }
 }
 
@@ -33,6 +40,14 @@ class MyTV10 {
             return;
         }
         this.volume = volume;
+    }
+
+    public void getPrevChannel() {
+        if (channel == MIN_CHANNEL) {
+            channel = MAX_CHANNEL;
+        } else {
+            channel--;
+        }
     }
 
     public int getChannel() {
