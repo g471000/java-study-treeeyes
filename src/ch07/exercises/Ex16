@@ -1,0 +1,11 @@
+[7-16] 다음 중 연산결과가 true가 아닌 것은? (모두 고르시오)
+class Car {}
+class FireEngine extends Car implements Movable {}
+class Ambulance extends Car {}
+FireEngine fe = new FireEngine();
+
+    a. fe instanceof FireEngine -> true
+    b. fe instanceof Movable -> true
+    c. fe instanceof Object -> true
+    d. fe instanceof Car -> true
+    e. fe instanceof Ambulance -> false

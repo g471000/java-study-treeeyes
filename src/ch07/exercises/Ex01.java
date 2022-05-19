@@ -69,19 +69,19 @@ class SutdaDeck {
 }
 
 class SutdaCard {
-    int num;
-    boolean isKwang;
+    final int NUMBER;
+    final boolean IS_KWANG;
 
     SutdaCard() {
         this(1, true);
     }
 
     SutdaCard(int num, boolean isKwang) {
-        this.num = num;
-        this.isKwang = isKwang;
+        this.NUMBER = num;
+        this.IS_KWANG = isKwang;
     }
 
     public String toString() {
-        return num + (isKwang ? "K" : "");
+        return NUMBER + (IS_KWANG ? "K" : "");
     }
 }
