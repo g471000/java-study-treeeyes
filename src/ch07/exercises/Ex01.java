@@ -1,14 +1,19 @@
 package ch07.exercises;
 
-import ch06.Card;
-
 public class Ex01 {
     public static void main(String[] args) {
+        System.out.println("---Ex01---");
         SutdaDeck deck = new SutdaDeck();
+        deck.printDeck();
 
-        for (int i = 0; i < deck.cards.length; i++) {
-            System.out.print(deck.cards[i] + ",");
-        }
+        System.out.println("---Ex02---");
+        System.out.println(deck.pick(0));
+        System.out.println(deck.pick());
+        deck.shuffle();
+        deck.printDeck();
+        System.out.println(deck.pick(0));
+        System.out.println(deck.pick());
+        System.out.println();
     }
 }
 
@@ -23,6 +28,36 @@ class SutdaDeck {
 
             cards[i] = new SutdaCard(num, isKwang);
         }
+    }
+
+    public SutdaCard pick(int index) {
+        return cards[index];
+    }
+
+    public SutdaCard pick() {
+        int index = getRandomIndex();
+        return cards[index];
+    }
+
+    public void shuffle() {
+        for (int i = 0; i < cards.length; i++) {
+            int index = getRandomIndex();
+
+            SutdaCard temp = cards[i];
+            cards[i] = cards[index];
+            cards[index] = temp;
+        }
+    }
+
+    public void printDeck() {
+        for (int i = 0; i < cards.length; i++) {
+            System.out.print(cards[i] + ",");
+        }
+        System.out.println();
+    }
+
+    private int getRandomIndex() {
+        return (int) (Math.random() * cards.length);
     }
 
     private boolean isOneThreeEight(int num) {
