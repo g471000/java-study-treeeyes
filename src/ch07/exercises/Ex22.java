@@ -1,11 +1,32 @@
 package ch07.exercises;
 
 public class Ex22 {
+    public static void main(String[] args) {
+        Shape[] arr = {
+                new Circle(5.0),
+                new Rectangle(3, 4),
+                new Circle(1),
+        };
+
+        System.out.println("Sum of Area: " + sumArea(arr));
+
+    }
+
+    public static double sumArea(Shape[] arr) {
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            double curr = arr[i].calArea();
+            System.out.println("curr: " + curr);
+            sum += curr;
+        }
+        return sum;
+    }
 }
 
 class Circle extends Shape {
 
     double radius;
+
     Circle(double radius) {
         this(new Point(0, 0), radius);
     }
@@ -17,7 +38,7 @@ class Circle extends Shape {
 
     @Override
     double calArea() {
-        return 2 * radius * Math.PI;
+        return Math.pow(radius, 2) * Math.PI;
     }
 }
 
