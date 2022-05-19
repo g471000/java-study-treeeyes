@@ -1,0 +1,29 @@
+[7-5]
+Method Overriding in Java.
+If subclass (child class) has the same method as declared in the parent class,
+it is known as method overriding in Java. In other words,
+If a subclass provides the specific implementation of the method that has been declared by one of its parent class,
+it is known as method overriding.
+
+오버라이딩(overriding)이란, ‘조상 클래스로부터 상속받은 메서드를 자손 클래스에 맞게 재정의 하는 것’을 말한다.
+조상 클래스로부터 상속받은 메서드를 자손 클래스에서 그대로 사용할 수 없는 경우가 많기 때문에 오버라이딩이 필요하다.
+
+
+[7-4] 다음 중 오버라이딩의 조건으로 옳지 않은 것은? (모두 고르시오)
+a. 조상의 메서드와 이름이 같아야 한다.
+b. 매개변수의 수와 타입이 모두 같아야 한다.
+c. 리턴타입이 같아야 한다.
+d. 접근 제어자는 조상의 메서드보다 좁은 범위로만 변경할 수 있다.
+e. 조상의 메서드보다 더 많은 수의 예외를 선언할 수 있다.
+
+d, e
+
+자손 클래스에서 오버라이딩하는 메서드는 조상 클래스의 메서드와
+- 이름이 같아야 한다.
+- 매개변수가 같아야 한다.
+- 리턴타입이 같아야 한다.
+
+조상 클래스의 메서드를 자손 클래스에서 오버라이딩할 때
+1. 접근 제어자를 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.
+2. 예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.
+3. 인스턴스메서드를 static 메서드로 또는 그 반대로 변경할 수 없다.

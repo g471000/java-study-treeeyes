@@ -31,6 +31,9 @@ class SutdaDeck {
     }
 
     public SutdaCard pick(int index) {
+        if (index < 0 || index >= cards.length) {
+            return null;
+        }
         return cards[index];
     }
 
