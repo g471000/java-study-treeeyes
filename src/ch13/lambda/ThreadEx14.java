@@ -1,4 +1,4 @@
-package ch13;
+package ch13.lambda;
 
 import javax.swing.*;
 

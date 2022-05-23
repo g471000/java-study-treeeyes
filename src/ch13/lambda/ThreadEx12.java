@@ -1,4 +1,4 @@
-package ch13;
+package ch13.lambda;
 
 public class ThreadEx12 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ch13;
+package ch13.lambda;
 
 public class ThreadEx10 implements Runnable{
     static boolean autoSave = false;

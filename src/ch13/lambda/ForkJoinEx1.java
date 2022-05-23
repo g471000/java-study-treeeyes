@@ -1,4 +1,4 @@
-package ch13;
+package ch13.lambda;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;

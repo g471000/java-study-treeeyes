@@ -1,8 +1,7 @@
-package ch13;
+package ch13.lambda;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.*;
 
 public class ThreadEx11 {
     public static void main(String[] args) {

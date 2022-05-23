@@ -1,18 +1,18 @@
-package ch13;
+package ch13.lambda;
 
-public class ThreadEx01 {
+public class ThreadEx1 {
     public static void main(String[] args) {
-        Thread00 t00 = new Thread00();
+        Thread1 t1 = new Thread1();
 
-        Runnable r = new Thread1();
-        Thread t1 = new Thread(r);
+        Runnable r = new Thread2();
+        Thread t2 = new Thread(r);
 
-        t00.start();
         t1.start();
+        t2.start();
     }
 }
 
-class Thread00 extends Thread {
+class Thread1 extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println(getName());
@@ -20,7 +20,7 @@ class Thread00 extends Thread {
     }
 }
 
-class Thread01 implements Runnable {
+class Thread2 implements Runnable {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName());

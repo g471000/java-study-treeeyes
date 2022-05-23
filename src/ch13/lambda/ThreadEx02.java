@@ -1,13 +1,13 @@
-package ch13;
+package ch13.lambda;
 
-public class ThreadEx03 {
+public class ThreadEx02 {
     public static void main(String[] args) {
-        Thread03 t = new Thread03();
-        t.run();
+        ThreadEx2_1 t1 = new ThreadEx2_1();
+        t1.start();
     }
 }
 
-class Thread03 extends Thread {
+class ThreadEx2_1 extends Thread {
     public void run() {
         throwException();
     }
@@ -18,6 +18,5 @@ class Thread03 extends Thread {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
