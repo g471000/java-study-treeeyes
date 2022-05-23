@@ -16,7 +16,6 @@ public class StreamEx1 {
 
         studentStream.sorted(Comparator.comparing(Student01::getClassNum).thenComparing(Comparator.naturalOrder()))
                 .forEach(System.out::println);
-
     }
 }
 
