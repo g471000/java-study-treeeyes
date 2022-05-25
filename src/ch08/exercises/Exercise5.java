@@ -8,6 +8,7 @@ public class Exercise5 {
         // 5
         method(false);
         // 1
+        // 2
         // 5
         // 6
     }
@@ -16,6 +17,7 @@ public class Exercise5 {
         try {
             System.out.println(1);
             if (b) throw new ArithmeticException();
+            System.out.println(2);
         } catch (RuntimeException runtimeException) {
             System.out.println(3);
             return;
