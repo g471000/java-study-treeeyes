@@ -19,20 +19,20 @@ public class IOEx03 {
 
         try {
             while (input.available() > 0) {
-                input.read(temp);
-                output.write(temp);
-                outSrc = output.toByteArray();
-
-                printArrays(temp, outSrc);
-                System.out.println();
+                int len = input.read(temp);
+                output.write(temp, 0, len);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        outSrc = output.toByteArray();
+        printArrays(inSrc, temp, outSrc);
     }
 
-    static void printArrays(byte[] temp, byte[] outSrc) {
+    static void printArrays(byte[] inSrc, byte[] temp, byte[] outSrc) {
+        System.out.println("Input Source : " + Arrays.toString(inSrc));
         System.out.println("temp         : " + Arrays.toString(temp));
-        System.out.println("output Source: " + Arrays.toString(outSrc));
+        System.out.println("Output Source: " + Arrays.toString(outSrc));
     }
 }
