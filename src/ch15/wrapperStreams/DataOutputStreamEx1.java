@@ -1,4 +1,4 @@
-package ch14.stream;
+package ch15.wrapperStreams;
 
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -10,7 +10,7 @@ public class DataOutputStreamEx1 {
         DataOutputStream dos = null;
 
         try {
-            fos = new FileOutputStream("src/ch14/stream/sample.dat");
+            fos = new FileOutputStream("src/ch15/wrapperStreams/sample.dat");
             dos = new DataOutputStream(fos);
 
             dos.writeInt(10);

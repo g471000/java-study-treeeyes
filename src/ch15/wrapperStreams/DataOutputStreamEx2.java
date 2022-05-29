@@ -1,4 +1,4 @@
-package ch14.stream;
+package ch15.wrapperStreams;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
