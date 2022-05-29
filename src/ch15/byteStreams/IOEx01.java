@@ -1,4 +1,4 @@
-package ch15;
+package ch15.byteStreams;
 
 import java.io.*;
 import java.util.Arrays;
