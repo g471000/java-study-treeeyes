@@ -3,7 +3,6 @@ package ch15.systemAndFile;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.RandomAccess;
 
 public class RandomAccessFileEx2 {
     public static void main(String[] args) {
@@ -14,7 +13,7 @@ public class RandomAccessFileEx2 {
                 5, 70, 90, 100};
 
         try {
-            RandomAccessFile raf = new RandomAccessFile("score2.dat", "rw");
+            RandomAccessFile raf = new RandomAccessFile("src/ch15/systemAndFile/score2.dat", "rw");
             for (int i = 0; i < score.length; i++) {
                 raf.writeInt(score[i]);
             }
