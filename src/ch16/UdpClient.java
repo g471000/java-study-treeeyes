@@ -19,7 +19,7 @@ public class UdpClient {
         datagramSocket.send(outPacket);
         datagramSocket.receive(inPacket);
 
-        System.out.println("current server tiem : " + inPacket.getData());
+        System.out.println("current server time : " + new String(inPacket.getData()));
 
         datagramSocket.close();
     }
