@@ -8,3 +8,4 @@ All the codes are inside of the src folder.
 Covered essential topics of the Java
 
 - Ch 02 [Variable](https://github.com/g471000/java-study-treeeyes/tree/master/src/ch02)
+- Ch 03 [Operators](https://github.com/g471000/java-study-treeeyes/tree/master/src/ch03)
